@@ -13,10 +13,10 @@ router.get("/get-blogs", async (req, res) => {
     }
 });
 
-router.post("/add-like", async(req, res) => {
+router.post("/add-view", async(req, res) => {
     if (!req.body?.id) return res.sendStatus(400);
     try {
-        await Blog.findByIdAndUpdate(req.body.id, { $inc: { likes: 1 } });
+        await Blog.findByIdAndUpdate(req.body.id, { $inc: { views: 1 } });
         res.sendStatus(200);
     } catch (error) {
         res.sendStatus(500);
