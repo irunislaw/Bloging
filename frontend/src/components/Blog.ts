@@ -4,7 +4,7 @@ export const BlogComponent = (title: string, author: string, authorUrl: string, 
     <div class="px-10 pt-12  h-44 text-2xl whitespace-pre-wrap font-medium text-white">${title}</div>
     <div class="flex container px-10 py-10 mx-auto w ">
         <div
-            class="bg-[url('${authorUrl}')] bg-center float left bg-cover w-16 h-16 min-w-fit min-h-fit shadow-md rounded-full">
+            class="bg-center float left bg-cover w-16 h-16 min-w-fit min-h-fit shadow-md rounded-full" style="background-image: url('${authorUrl}')">
         </div>
         <div class="w-96">
             <div class="font-normal float-none text-white pl-6 text-lg"> ${author}</div>
