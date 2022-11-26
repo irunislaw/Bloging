@@ -7,7 +7,8 @@ router.get("/get-blogs", async (req, res) => {
     let page = 0;
     if (!isNaN(parseInt(req.query?.page?.toString()))) page = Math.max(0, parseInt(req.query.page.toString()) - 1);
     try {
-        res.send(await Blog.find().skip(page * 10).limit(10));
+        const blogs = await Blog.find().skip(page * 10).limit(10);
+        res.send(blogs);
     } catch (error) {
         res.sendStatus(500);
     }
