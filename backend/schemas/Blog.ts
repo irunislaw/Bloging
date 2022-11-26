@@ -1,4 +1,4 @@
-import mongoose, { Model, model, Schema } from "mongoose"
+import mongoose, { Model, model, Schema } from "mongoose";
 
 interface Blog {
     _id: mongoose.ObjectId,
@@ -6,7 +6,9 @@ interface Blog {
     tags: string[],
     views: number,
     likes: number,
-    shortContent: string
+    shortContent: string,
+    authorName: string,
+    authorImage: string
 }
 
 const BlogSchema = new Schema<Blog, Model<Blog>>({
@@ -14,7 +16,9 @@ const BlogSchema = new Schema<Blog, Model<Blog>>({
     tags: [],
     views: Number,
     likes: Number,
-    shortContent: String
+    shortContent: String,
+    authorName: String,
+    authorImage: String
 });
 
 export const Blog = model("blog", BlogSchema, "blogs");
