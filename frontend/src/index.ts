@@ -1,6 +1,5 @@
 import { BlogComponent } from "./components/Blog";
 import sanitize from "sanitize-html";
-import axios from "axios";
 
 const blogsDiv = document.querySelector("#blogs") as HTMLDivElement;
 
