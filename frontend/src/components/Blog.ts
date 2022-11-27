@@ -2,7 +2,7 @@ import { getLocale } from "../util/getLocale"
 
 export const BlogComponent = (title: string, shortContent: string, author: string, authorUrl: string, tags: string[], date: Date) => String.raw`
 <div
-    class="bg-gradient-to-tr py-10 from-rose-500 flex flex-col gap-10 to-orange-500 m-6 w-5/6 rounded-lg shadow-lg duration-200 lg:w-1/2 xl:w-1/3">
+    class="w-1/3 bg-gradient-to-tr py-10 from-rose-500 flex flex-col gap-10 to-orange-500 m-6 rounded-lg shadow-lg duration-200 lg:w-1/2 xl:w-full">
     <div>
         <div class="px-10 text-2xl whitespace-pre-wrap font-medium text-white uppercase">${title}</div>
         <div class="px-10 whitespace-pre-wrap text-white">${shortContent}</div>
