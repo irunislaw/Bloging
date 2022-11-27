@@ -8,7 +8,9 @@ interface Blog {
     likes: number,
     shortContent: string,
     authorName: string,
-    authorImage: string
+    authorImage: string,
+    createdAt: Date,
+    updatedAt: Date
 }
 
 const BlogSchema = new Schema<Blog, Model<Blog>>({
@@ -19,6 +21,6 @@ const BlogSchema = new Schema<Blog, Model<Blog>>({
     shortContent: String,
     authorName: String,
     authorImage: String
-});
+}, {timestamps: true});
 
 export const Blog = model("blog", BlogSchema, "blogs");
