@@ -4,29 +4,42 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#111827"> 
+    <meta name="theme-color" content="#111827">
 </head>
 
 <body class="bg-gray-900">
     <div id="app" class>
-        <div class="bg-gradient-to-tr from-rose-500 to-orange-500 p-10 text-3xl text-white font-medium">AHA</div>
-        
-        <div class="flex justify-center p-10">
-            
-            <div id="blogs" class="grid grid-cols-1 gap-5 w-2/3 xl:grid-cols-2 content-center">
-            
-            
+        <div class="bg-gradient-to-tr from-rose-500 to-orange-500 p-10 ">
+            <div class="flex justify-between px-20">
+                <div class="text-3xl text-white font-medium cursor-pointer">Blogging</div>
+                <div class="text-2xl text-white flex gap-5 items-center">
+                    <div class="cursor-pointer">Kontakt</div>
+                    <input
+                        class="placeholder:text-gray-200 block bg-orange-600 border-b-white border border-transparent w-full text-xl rounded-sm py-2 px-7 shadow-sm focus:outline-none"
+                        placeholder="Wyszukaj artykuł..." type="text" name="search" />
+                    
+                    </div>
             </div>
         </div>
-      
+
+        <div class="flex justify-center p-10">
+
+            <div id="blogs" class="grid grid-cols-1 gap-5 w-2/3 xl:grid-cols-2 content-center">
+
+
+            </div>
+        </div>
+
 
         <footer class="flex flex-col items-center justify-between p-6 bg-gray-900 sm:flex-row">
-            <a href="#" class="text-xl font-bold ansition-colors duration-300 text-gray-300 hover:text-orange-500">Brand</a>
-        
+            <a href="#"
+                class="text-xl font-bold ansition-colors duration-300 text-gray-300 hover:text-orange-500">Brand</a>
+
             <p class="text-sm text-gray-600 dark:text-gray-300">© Copyright 2021. All Rights Reserved.</p>
-        
+
             <div class="flex -mx-2">
-                <a href="#" class="mx-2  transition-colors duration-300 text-gray-300 hover:text-orange-500" aria-label="Reddit">
+                <a href="#" class="mx-2  transition-colors duration-300 text-gray-300 hover:text-orange-500"
+                    aria-label="Reddit">
                     <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -34,8 +47,9 @@
                         </path>
                     </svg>
                 </a>
-        
-                <a href="#" class="mx-2  transition-colors duration-300 text-gray-300 hover:text-orange-500" aria-label="Facebook">
+
+                <a href="#" class="mx-2  transition-colors duration-300 text-gray-300 hover:text-orange-500"
+                    aria-label="Facebook">
                     <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -43,8 +57,9 @@
                         </path>
                     </svg>
                 </a>
-        
-                <a href="#" class="mx-2 transition-colors duration-300 text-gray-300 hover:text-orange-500" aria-label="Github">
+
+                <a href="#" class="mx-2 transition-colors duration-300 text-gray-300 hover:text-orange-500"
+                    aria-label="Github">
                     <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
