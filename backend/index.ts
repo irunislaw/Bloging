@@ -3,11 +3,12 @@ config({ path: "../.env" });
 import * as express from "express";
 import mongoose from "mongoose";
 import { router } from "./api/VersionManager";
+import * as cors from "cors";
 const app = express();
 
 (async () => {
     app.use(express.json());
-
+    app.use(cors());
     app.use(process.env.API_ROOT, router);
 
     await mongoose.connect(process.env.MONGO_URI + "/" + process.env.MONGO_DB);
