@@ -16,8 +16,15 @@ const app = express();
 
     app.use("/", express.static(path.join("..", "static") ));
 
+    app.use("/", express.static(path.join("..", "..", "frontend", "dist") ));
+
+
     app.get("/", (req, res) => {
         res.send(routes);
+    });
+
+    app.get('*', (req, res) => {
+        res.sendFile(path.join("..", "..", "frontend", "dist", "index.html"));
     });
 
     app.listen(process.env.PORT, () => {
