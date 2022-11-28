@@ -2,13 +2,17 @@ import { BlogComponent } from "../components/Blog";
 import { Blog } from "../interfaces/Blog";
 import { sanitize } from "./sanitize";
 import { blogsDiv } from "../index";
+import { compose } from "./compose";
+import { search } from "./search";
 import { sortSelected } from "./sortSelected";
 
 export let renderBlogs = (blogs: Blog[]) => {
     blogsDiv.innerHTML = "";
     console.log(blogs);
-    let sortedBlogs = sortSelected(blogs);
-    for (const blog of sortedBlogs) {
+
+    const newBlogs = compose<Blog[]>(search, sortSelected);
+
+    for (const blog of newBlogs(blogs)) {
         blogsDiv.innerHTML += sanitize(
             BlogComponent(
                 blog._id,

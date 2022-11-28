@@ -8,9 +8,9 @@ export let search = () => {
     console.log("siema");
 
     console.log(globalBlogArray);
-    renderBlogs(
-        globalBlogArray.filter((obj) => {
-            return obj.title.match(new RegExp(value, "gi"));
-        })
-    );
+
+    return globalBlogArray.filter((obj) => {
+        return obj.title.match(new RegExp(value, "gi"));
+    })
+
 };

@@ -28,34 +28,39 @@
             </div>
         </div>
 
-        <div class=" flex justify-end mt-2 mr-48">
-            <select
-                class=" mr-5 mt-6 bg-gray-700 border  text-gray-200 border-b-white border border-transparent font-medium text-sm rounded-sm flex justify-end py-2.5 px-7 " id="selectSort">
-                <option selected value="date">data</option>
-                <option value="views">wyświetlenia</option>
-                <option value="title">tytuł</option>
-                <option value="popularity">popularność</option>
-            </select>
-        </div>
 
-        <div class="flex justify-center py-10 w-full px-4 lg:p-10 min-h-[calc(100vh-282px)]">
+        <div class="flex flex-col items-center gap-5 py-10 w-full px-4 lg:p-10 min-h-[calc(100vh-325px)]">
+            <div class=" flex justify-center ">
+                <select
+                    class=" bg-gray-700 text-gray-200 border-b-white border border-transparent font-medium text-sm rounded-sm flex py-2.5 px-7 "
+                    id="selectSort">
+                    <option selected value="date">data</option>
+                    <option value="views">wyświetlenia</option>
+                    <option value="title">tytuł</option>
+                    <option value="popularity">popularność</option>
+                </select>
+            </div>
 
-            <div id="preload" class="flex flex-col justify-center items-center min-h-[calc(100vh-282px)] w-full gap-5">
+
+
+            <div id="preload" class="flex flex-col justify-center items-center min-h-[calc(100vh-345px)] w-full gap-5">
 
                 <div id="emoji" class="text-9xl">🕐</div>
                 <div class="text-3xl text-white w-10/12 md:w-1/2 text-center ">Loading...</div>
             </div>
 
             <div id="error" class="hidden">
-                <div class="flex flex-col justify-center items-center min-h-[calc(100vh-282px)] w-full gap-5">
+                <div class="flex flex-col justify-center items-center min-h-[calc(100vh-325px)] w-full gap-5">
                     <div class="text-9xl">🤔</div>
                     <div class="text-3xl text-white w-10/12 md:w-1/2 text-center ">Hmm, coś poszło nie tak podczas
                         ładownia
                         blogów,
                         spróbuj ponownie później</div>
                 </div>
-            </div> 
-            <div id="blogs" class="hidden grid-cols-1 gap-12 w-full lg:w-9/12 xl:grid-cols-2 content-center min-h-[calc(100vh-282px)]"></div>
+            </div>
+            <div id="blogs"
+                class="hidden grid-cols-1 gap-12 w-full lg:w-9/12 xl:grid-cols-2 content-center min-h-[calc(100vh-282px)]">
+            </div>
         </div>
 
 
@@ -101,4 +106,5 @@
     </div>
     <script type="module" src="/src/index.ts"></script>
 </body>
+
 </html>
