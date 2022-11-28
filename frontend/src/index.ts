@@ -22,7 +22,7 @@ loadEmojis(emojis);
 const blogsDiv = document.querySelector("#blogs") as HTMLDivElement;
 const errorDiv = document.querySelector("#error") as HTMLDivElement;
 const compose = (...fns: any[]) => (x: any[]) => fns.reduce((acc, fn) => fn(acc), x);
-const sortByDate = (list: Array<Blog>) => list.sort((a, b) => {
+const sortByDate = (list: Blog[]) => list.sort((a, b) => {
     let date1 = new Date(a.createdAt);
     let date2 = new Date(b.createdAt);
     return date1.getTime() - date2.getTime()

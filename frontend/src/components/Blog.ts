@@ -11,8 +11,8 @@ export const BlogComponent = (id: string, title: string, shortContent: string, a
     </div>
 
     <div class="flex px-5 items-center justify-between">
-        <div class="flex self-center">
-        <div class="bg-center bg-cover aspect-square w-16 h-16 shadow-md rounded-full"
+        <div class="flex">
+        <div class="bg-center bg-cover self-center aspect-square w-16 h-16 shadow-md rounded-full"
             style="background-image: url('${authorUrl}')">
         </div>
         <div class="flex flex-col justify-between">
