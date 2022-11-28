@@ -2,6 +2,7 @@ import { BlogComponent } from "./components/Blog";
 import { Blog } from "./interfaces/Blog";
 import { sanitize } from "./util/sanitize";
 
+let arr:Array<Blog>
 const loader = document.querySelector('#preload') as HTMLDivElement;
 const emoji = loader?.querySelector('#emoji') as HTMLDivElement;
 
@@ -29,6 +30,42 @@ const sortByDate = (list: Blog[]) => list.sort((a, b) => {
 });
 const composeSortByDate = compose(sortByDate);
 
+let renderBlogs =(blogSorted:Array<Blog>)=>{
+    blogsDiv.innerHTML ="";
+    console.log(blogSorted);
+    
+    for (const blog of blogSorted) {
+        blogsDiv.innerHTML += sanitize(
+            BlogComponent(
+                blog._id,
+                blog.title,
+                blog.shortContent,
+                blog.authorName,
+                blog.authorImage,
+                blog.tags,
+                new Date(blog.createdAt),
+                blog.likes,
+                blog.views
+            )
+        );      
+            
+    }
+}
+let search =()=>{
+    let input = document.querySelector("#search") as HTMLInputElement
+    let value = input.value
+    console.log(value);
+    console.log("siema");
+    
+    console.log(arr);
+    renderBlogs(arr.filter(obj=>{
+      return obj.title.includes(value) || obj.tags.includes(value)
+    }))
+
+}
+document.querySelector("#search")?.addEventListener("change",search);
+
+
 (async () => {
     try {
        
@@ -38,28 +75,14 @@ const composeSortByDate = compose(sortByDate);
         )).json()) as Blog[];
 
         console.log(data);
-
+        arr=data
         let blogSorted = composeSortByDate(data) as Blog[];
+        renderBlogs(blogSorted);
         loader.classList.remove("flex");
         loader.classList.add("hidden");
         blogsDiv.classList.add("grid");
         blogsDiv.classList.remove("hidden");
-        for (const blog of blogSorted) {
-
-            blogsDiv.innerHTML += sanitize(
-                BlogComponent(
-                    blog._id,
-                    blog.title,
-                    blog.shortContent,
-                    blog.authorName,
-                    blog.authorImage,
-                    blog.tags,
-                    new Date(blog.createdAt),
-                    blog.likes,
-                    blog.views
-                )
-            );
-        }
+        
     } catch (error) {
 
         blogsDiv.classList.add("hidden");
