@@ -2,24 +2,11 @@ import { BlogComponent } from "./components/Blog";
 import { Blog } from "./interfaces/Blog";
 import { sanitize } from "./util/sanitize";
 
-let arr: Array<Blog>;
-const loader = document.querySelector("#preload") as HTMLDivElement;
-const emoji = loader?.querySelector("#emoji") as HTMLDivElement;
+let arr: Blog[];
+const loader = document.querySelector('#preload') as HTMLDivElement;
+const emoji = loader?.querySelector('#emoji') as HTMLDivElement;
 
-const emojis = [
-  "🕐",
-  "🕑",
-  "🕒",
-  "🕓",
-  "🕔",
-  "🕕",
-  "🕖",
-  "🕗",
-  "🕘",
-  "🕙",
-  "🕚",
-  "🕛",
-];
+const emojis = ["🕐", "🕑", "🕒", "🕓", "🕔", "🕕", "🕖", "🕗", "🕘", "🕙", "🕚", "🕛"];
 
 const interval = 70;
 
@@ -44,12 +31,42 @@ const sortByDate = (list: Blog[]) =>
     let date1 = new Date(a.createdAt);
     let date2 = new Date(b.createdAt);
     return date1.getTime() - date2.getTime();
-  });
+});
 const composeSortByDate = compose(sortByDate);
 
-let renderBlogs = (blogSorted: Array<Blog>) => {
-  blogsDiv.innerHTML = "";
-  console.log(blogSorted);
+let renderBlogs = (blogs: Blog[]) => {
+    blogsDiv.innerHTML = "";
+    console.log(blogs);
+
+    for (const blog of blogs) {
+        blogsDiv.innerHTML += sanitize(
+            BlogComponent(
+                blog._id,
+                blog.title,
+                blog.shortContent,
+                blog.authorName,
+                blog.authorImage,
+                blog.tags,
+                new Date(blog.createdAt),
+                blog.likes,
+                blog.views
+            )
+        );
+    }
+}
+let search = () => {
+    let input = document.querySelector("#search") as HTMLInputElement;
+    let value = input.value;
+    console.log(value);
+    console.log("siema");
+
+    console.log(arr);
+    renderBlogs(arr.filter(obj => {
+        return obj.title.match(new RegExp(value, "gi"));
+    }));
+
+}
+document.querySelector("#search")?.addEventListener("change", search);
 
   for (const blog of blogSorted) {
     blogsDiv.innerHTML += sanitize(
@@ -80,27 +97,28 @@ let search = () => {
 document.querySelector("#search")?.addEventListener("change", search);
 
 (async () => {
-  try {
-    const data = (await (
-      await fetch(
-        "https://bloggingbackend.onrender.com/api/v1/blogs/get-blogs",
-        {}
-      )
-    ).json()) as Blog[];
+    try {
 
-    console.log(data);
-    arr = data;
-    let blogSorted = composeSortByDate(data) as Blog[];
-    renderBlogs(blogSorted);
-    loader.classList.remove("flex");
-    loader.classList.add("hidden");
-    blogsDiv.classList.add("grid");
-    blogsDiv.classList.remove("hidden");
-  } catch (error) {
-    blogsDiv.classList.add("hidden");
-    errorDiv.classList.remove("hidden");
-    errorDiv.classList.add("flex");
-  }
+        const data = await ((await fetch(
+            "https://bloggingbackend.onrender.com/api/v1/blogs/get-blogs",
+            {}
+        )).json()) as Blog[];
+
+        console.log(data);
+        arr = data
+        let blogSorted = composeSortByDate(data) as Blog[];
+        renderBlogs(blogSorted);
+        loader.classList.remove("flex");
+        loader.classList.add("hidden");
+        blogsDiv.classList.add("grid");
+        blogsDiv.classList.remove("hidden");
+
+    } catch (error) {
+
+        blogsDiv.classList.add("hidden");
+        errorDiv.classList.remove("hidden");
+        errorDiv.classList.add("flex");
+    }
 })();
 const hideBlog = (id: string)=>{
     document.getElementById(id)?.classList.add("hidden")
