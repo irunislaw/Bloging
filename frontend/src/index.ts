@@ -56,8 +56,11 @@ let sortSelected = (blogArray: Blog[]) => {
       return sortByDate(blogArray);
     case "title":
       return sortByTitle(blogArray);
+    case "popularity":
+      return sortByPopularity(blogArray);
     default:
       return sortByDate(blogArray);
+
   }
 };
 let renderBlogs = (blogs: Blog[]) => {
@@ -159,7 +162,15 @@ let sortByTitle = (blogArray: Blog[]) => {
       : 0;
   });
 };
-
+let sortByPopularity = (blogArray: Blog[]) => {
+  return blogArray.sort((a, b) => {
+    return a.views/a.likes < b.views/b.likes
+      ? -1
+      : a.views/a.likes > b.views/b.likes
+      ? 1
+      : 0;
+  })
+}
 document
   .querySelector("#selectSort")
   ?.addEventListener("input", () => renderBlogs(arr));
