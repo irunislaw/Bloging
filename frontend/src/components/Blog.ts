@@ -1,6 +1,9 @@
 import { getLocale } from "../util/getLocale"
 
-export const BlogComponent = (title: string, shortContent: string, author: string, authorUrl: string, tags: string[], date: Date) => String.raw`
+export const BlogComponent = (title: string, shortContent: string, author: string, authorUrl: string, tags: string[], date: string) => {
+    let loading:Boolean=false
+
+    return String.raw`
 <div
     class="bg-gradient-to-tr py-10 from-rose-500 gap-10 flex flex-col justify-between to-orange-500 rounded-lg shadow-lg duration-200 w-full">
     <div>
@@ -14,7 +17,7 @@ export const BlogComponent = (title: string, shortContent: string, author: strin
         </div>
         <div>
             <div class="font-normal float-none text-white pl-6 text-lg"> ${author}</div>
-            <div class="text-white pl-6 text-s text-light">${Intl.DateTimeFormat(getLocale(), {dateStyle: "long"}).format(date)} • ${tags.map((t) => " " + t)}</div>
+            <div class="text-white pl-6 text-s text-light">${Intl.DateTimeFormat(getLocale(), {dateStyle: "long"}).format(Date.parse(date))} • ${tags.map((t) => " " + t)}</div>
         </div>
     </div>
-</div>`;
+</div>`}
