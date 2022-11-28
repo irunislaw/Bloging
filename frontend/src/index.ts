@@ -67,35 +67,6 @@ let search = () => {
 
 }
 document.querySelector("#search")?.addEventListener("change", search);
-
-  for (const blog of blogSorted) {
-    blogsDiv.innerHTML += sanitize(
-      BlogComponent(
-        blog._id,
-        blog.title,
-        blog.shortContent,
-        blog.authorName,
-        blog.authorImage,
-        blog.tags,
-        new Date(blog.createdAt),
-        blog.likes,
-        blog.views
-      )
-    );
-  }
-};
-let search = () => {
-  let input = document.querySelector("#search") as HTMLInputElement;
-  let value = input.value;
-  
-  renderBlogs(
-    arr.filter((obj) => {
-      return obj.title.includes(value) || obj.tags.includes(value);
-    })
-  );
-};
-document.querySelector("#search")?.addEventListener("change", search);
-
 (async () => {
     try {
 
