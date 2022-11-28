@@ -6,8 +6,8 @@
 	- - [X] (1 pkt) Aplikacja powinna wyświetlać blogi zaczynając od najnowszego z nich
 	- - [ ] (5 pkt) Sortowanie blogów według:
 		- - [X] (1 pkt) Daty
-		- - [ ] (1 pkt) Wyświetleń
-		- - [ ] (1 pkt) Polubień  
+		- - [X] (1 pkt) Wyświetleń
+		- - [X] (1 pkt) Polubień  
 		- - [ ] (2 pkt) Popularność
 	- - [X] (2 pkt) Wyszukiwanie po: 
 		- - [X] (1 pkt) Tytule
@@ -17,7 +17,7 @@
 		- - [X] (1pkt) Tagów
 		- - [X] (1pkt) Wyświetleń
 		- - [X] (1pkt) Polubień
-		- - [ ] (1pkt) Miniaturki,Skrót treści
+		- - [X] (1pkt) Miniaturki,Skrót treści
 	- - [X] (2 pkt) Każdy z blogów powinien zawierać przycisk hide w celu ukrycia bloga
 3. - [X] (7 pkt) Styl aplikacji
 	- - [X] (2 pkt) Użycie frameworka CSS np. Tailwind lub czystego CSS
