@@ -7,6 +7,6 @@ export interface Blog {
     shortContent: string,
     authorName: string,
     authorImage: string,
-    createdAt: Date,
-    updatedAt: Date
+    createdAt: string,
+    updatedAt: string
 }
