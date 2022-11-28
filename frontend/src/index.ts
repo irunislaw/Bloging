@@ -2,9 +2,36 @@ import { BlogComponent } from "./components/Blog";
 import axios from "axios";
 import { Blog } from "./interfaces/Blog";
 import { sanitize } from "./util/sanitize";
+//loading
+const loader = document.querySelector('.preload')as HTMLDivElement;
+const emoji = loader?.querySelector('.emoji')as HTMLDivElement;
+
+const emojis = ["🕐", "🕜", "🕑","🕝", "🕒", "🕞", "🕓", "🕟", "🕔", "🕠", "🕕", "🕡", "🕖", "🕢",  "🕗", "🕣", "🕘", "🕤", "🕙",  "🕥", "🕚", "🕦",  "🕛", "🕧"];
+
+const interval = 125;
+
+const loadEmojis = (arr:Array<string>) => {
+    setInterval(() => {
+      emoji.innerText = arr[Math.floor(Math.random() * arr.length)];
+      //console.log(Math.floor(Math.random() * arr.length))
+    }, interval);
+}
+
+const init = () => {
+  loadEmojis(emojis);
+}
+init();
+
 
 const blogsDiv = document.querySelector("#blogs") as HTMLDivElement;
 const errorDiv = document.querySelector("#error") as HTMLDivElement;
+const compose = (...fns:any[]) => (x:any[]) => fns.reduce((acc, fn) => fn(acc), x);
+const sortByDate =(list:Array<Blog>) => list.sort( (a,b)=>{
+  let date1 = new Date(a.updatedAt);
+  let date2 = new Date(b.updatedAt);
+  return date1.getTime() - date2.getTime()
+});
+const composeSortByDate =compose(sortByDate);
 
 (async () => {
   try {
@@ -14,20 +41,29 @@ const errorDiv = document.querySelector("#error") as HTMLDivElement;
     )
       .then((response) => response.json())
       .then((data) => {
-        for (const blog of data) {
+        let blogSorted = composeSortByDate(data);
+        for (const blog of blogSorted) {
+          loader.style.display = "none"
           blogsDiv.innerHTML += sanitize(
             BlogComponent(
+              blog._id,
               blog.title,
               blog.shortContent,
               blog.authorName,
               blog.authorImage,
               blog.tags,
-              blog.updatedAt
+              blog.updatedAt,
             )
           );
         }
       });
+    
+
+
+
+
   } catch (error) {
+    
     blogsDiv.style.display = "none"
     errorDiv.style.display = "flex";
     errorDiv.innerHTML += sanitize(
