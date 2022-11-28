@@ -11,13 +11,18 @@
 
 <body class="bg-gray-900">
     <div id="app">
-        <nav class="flex items-center justify-center cursor-pointer bg-slate-900 drop-shadow-2xl h-20 ">
-            <input type="text" name="search"
-                class="p-3 text-base border-solid-2 rounded-md bg-purple-100 hover:bg-purple-200" />
-            <button
-                class="ml-3 p-3 text-base border-solid-2 bg-purple-100 rounded-lg hover:bg-purple-200">Wyszukaj</button>
-
-        </nav>
+        <div class="bg-gradient-to-tr from-rose-500 to-orange-500 p-10 shadow-2xl">
+            <div class="flex justify-between px-20">
+                <div class="text-3xl text-white font-medium cursor-pointer">Blogging</div>
+                <div class="text-2xl text-white flex gap-10 items-center">
+                    <div class="cursor-pointer">Kontakt</div>
+                    <input
+                        class="placeholder:text-gray-200 block bg-orange-600 border-b-white border border-transparent w-full text-xl rounded-sm py-2 px-7 shadow-sm focus:outline-none"
+                        placeholder="Wyszukaj artykuł..." type="text" name="search" />
+                    
+                    </div>
+            </div>
+        </div>
 
         <div class="flex justify-center py-10 w-full px-4 lg:p-10">
             <div id="preload"
@@ -35,7 +40,7 @@
                         spróbuj ponownie później</div>
                 </div>
             </div>
-            <div id="blogs" class="hidden grid-cols-1 gap-5 w-full lg:w-9/12 xl:grid-cols-2 content-center"></div>
+            <div id="blogs" class="hidden grid-cols-1 gap-12 w-full lg:w-9/12 xl:grid-cols-2 content-center"></div>
         </div>
 
 
