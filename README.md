@@ -12,7 +12,7 @@
 	- - [X] (2 pkt) Wyszukiwanie po: 
 		- - [X] (1 pkt) Tytule
 		- - [X] (1 pkt) Tagach
-	- - [ ] (5 pkt) Blog składa się z:
+	- - [X] (5 pkt) Blog składa się z:
 		- - [X] (1pkt) Tytułu
 		- - [X] (1pkt) Tagów
 		- - [X] (1pkt) Wyświetleń
