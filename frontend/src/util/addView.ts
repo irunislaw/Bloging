@@ -10,7 +10,7 @@ export const addView = async (id: string) => {
 
         console.log(
             await fetch(
-                "https://bloggingbackend.onrender.com/api/v1/blogs/add-view",
+                "/api/v1/blogs/add-view",
                 {
                     method: "POST",
                     body: JSON.stringify({ id }),
