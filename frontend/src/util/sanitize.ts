@@ -1,4 +1,4 @@
 import sanitizeHtml from "sanitize-html";
 
 
-export const sanitize = (text: string) => sanitizeHtml(text, { allowedAttributes: { "*": ["class", "style"] } });
+export const sanitize = (text: string) => sanitizeHtml(text, { allowedAttributes: { "*": ["class", "style", "onclick"] } });
