@@ -9,7 +9,7 @@ const errorDiv = document.querySelector("#error") as HTMLDivElement;
 (async () => {
   try {
     await fetch(
-      "https://bloggingbackend.onrender.com/api/v1/blogs/get-blogss",
+      "https://bloggingbackend.onrender.com/api/v1/blogs/get-blogs",
       {}
     )
       .then((response) => response.json())
@@ -34,7 +34,6 @@ const errorDiv = document.querySelector("#error") as HTMLDivElement;
       String.raw`<div class="flex flex-col justify-center items-center min-h-[calc(100vh-11.5rem)] gap-5">
             <div class="text-9xl">🤔</div>
             <div class="text-3xl text-white w-10/12 md:w-1/2 text-center ">Hmm, coś poszło nie tak podczas ładownia blogów, spróbuj ponownie później</div>
-
         </div>`
     );
    
