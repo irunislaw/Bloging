@@ -66,7 +66,7 @@ let search = () => {
     }));
 
 }
-document.querySelector("#search")?.addEventListener("change", search);
+document.querySelector("#search")?.addEventListener("input", search);
 (async () => {
     try {
 
