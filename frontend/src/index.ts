@@ -41,9 +41,12 @@ const composeSortByDate =compose(sortByDate);
     )
       .then((response) => response.json())
       .then((data) => {
+        console.log(data);
+        
         let blogSorted = composeSortByDate(data);
+        loader.style.display = "none"
         for (const blog of blogSorted) {
-          loader.style.display = "none"
+          
           blogsDiv.innerHTML += sanitize(
             BlogComponent(
               blog._id,
