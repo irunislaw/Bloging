@@ -4,6 +4,7 @@ import * as express from "express";
 import mongoose from "mongoose";
 import { router, routes } from "./api/VersionManager";
 import * as cors from "cors";
+import * as path from "path";
 const app = express();
 
 (async () => {
@@ -12,6 +13,8 @@ const app = express();
     app.use(process.env.API_ROOT, router);
 
     await mongoose.connect(process.env.MONGO_URI + "/" + process.env.MONGO_DB);
+
+    app.use("/", express.static(path.join("..", "static") ));
 
     app.get("/", (req, res) => {
         res.send(routes);
