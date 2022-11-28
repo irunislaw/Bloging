@@ -1,4 +1,3 @@
-import { renderBlogs } from "./renderBlogs";
 import { globalBlogArray } from "../index";
 
 export let search = () => {

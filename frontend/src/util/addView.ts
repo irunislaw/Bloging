@@ -1,4 +1,4 @@
-import { blogsDiv, globalBlogArray } from "..";
+import { globalBlogArray } from "..";
 import { renderBlogs } from "./renderBlogs";
 
 export const addView = async (id: string) => {
