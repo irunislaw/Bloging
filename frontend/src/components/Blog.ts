@@ -6,8 +6,11 @@ export const BlogComponent = (id: string, title: string, shortContent: string, a
 
     return String.raw`
 <div class="relative bg-gradient-to-tr py-10 from-rose-500 gap-10 flex flex-col justify-between to-orange-500 rounded-sm shadow-lg duration-200 w-full" id='${id}'
-    onclick="addView('${id}')">
-    <img src="${trash}" class="top-0 right-0 absolute w-5 aspect-square m-4 invert text-white" onclick="hideBlog('${id}')" />
+    onclick="addView('${id}');">
+    <img src="${trash}" class="top-0 right-0 absolute w-5 aspect-square m-4 invert text-white" onclick="((e) =>{
+        e.stopPropagation();
+        hideBlog('${id}');
+    })(event);" />
     <div>
         <div class="px-10 text-2xl whitespace-pre-wrap font-medium text-white uppercase">${title}</div>
         <div class="px-10 whitespace-pre-wrap text-white">${shortContent}</div>
