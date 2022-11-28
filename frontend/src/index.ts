@@ -56,7 +56,7 @@ let sortSelected = (blogArray: Blog[]) => {
       return sortByDate(blogArray);
     case "title":
       return sortByTitle(blogArray);
-    case "popularity":
+      case "popularity":
       return sortByPopularity(blogArray);
     default:
       return sortByDate(blogArray);
