@@ -1,5 +1,5 @@
 import { getLocale } from "../util/getLocale"
-import trash from "../../image/trash-solid.svg";
+import trash from "../image/trash-solid.svg";
 
 
 export const BlogComponent = (id: string, title: string, shortContent: string, author: string, authorUrl: string, tags: string[], date: Date, likes: number, views: number) => {
