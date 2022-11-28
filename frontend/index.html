@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="theme-color" content="#111827">
+    <link rel="stylesheet" href="./src/index.css">
 </head>
 
 
@@ -26,28 +27,39 @@
                         <div class="font-normal float-none text-black pl-6 text-lg"> Author name</div>
                         <div class="text-black pl-6 text-s text-light">25.11.2022 • Economy</div>
                     </div>
+        <!-- <div class="bg-gradient-to-tr from-rose-500 to-orange-500 p-10 ">
+            <div class="flex justify-between md:px-20 items-center">
+                <div class="text-3xl text-white font-medium cursor-pointer">Blogging</div>
+                <div class="hidden md:flex text-2xl text-white gap-5 items-center">
+                    <input
+                        class="placeholder:text-gray-200 block bg-orange-600 border-b-white border border-transparent w-full text-xl rounded-sm py-2 px-7 shadow-sm focus:outline-none"
+                        placeholder="Wyszukaj artykuł..." type="text" name="search" />
                 </div>
-            </section>
-            <section class="bg-gradient-to-tr from-rose-500 to-orange-500 m-6 w-1/3 rounded-lg shadow-lg duration-200 min-w-fit">
-                <div class="px-10 pt-12  h-44 text-2xl whitespace-pre-wrap font-medium text-white">Dabloons inflation is getting out of hand</div>
-                <div class="flex container px-10 py-10 mx-auto w ">
-                    <div class="bg-dabloons2 bg-center float left bg-cover w-16 h-16 min-w-fit min-h-fit shadow-md rounded-full"></div>
-                    <div class="w-96">
-                        <div class="font-normal float-none text-white pl-6 text-lg"> Author name</div>
-                        <div class="text-white pl-6 text-s text-light">25.11.2022 • Economy</div>
-                    </div>
+                <div class="flex md:hidden">
+                    <img src="./image/bars-solid.svg" class="w-10 aspect-square invert" alt="">
+
                 </div>
-            </section>
-            
+
+            </div>
+        </div> -->
+
+        <div class="flex justify-center py-10 px-4 lg:p-10">
+            <div id="error" class="hidden"></div>
+            <div id="blogs" class="grid grid-cols-1 gap-5 w-full lg:w-9/12 xl:grid-cols-2 content-center">
+
+            </div>
         </div>
 
+
         <footer class="flex flex-col items-center justify-between p-6 bg-gray-900 sm:flex-row">
-            <a href="#" class="text-xl font-bold ansition-colors duration-300 text-gray-300 hover:text-orange-500">Brand</a>
-        
-            <p class="text-sm text-gray-600 dark:text-gray-300">© Copyright 2021. All Rights Reserved.</p>
-        
+            <a href="#"
+                class="text-xl font-bold ansition-colors duration-300 text-gray-300 hover:text-orange-500">Blogging</a>
+
+            <p class="text-sm text-gray-600 dark:text-gray-300">© Copyright 2022. All Rights Reserved.</p>
+
             <div class="flex -mx-2">
-                <a href="#" class="mx-2  transition-colors duration-300 text-gray-300 hover:text-orange-500" aria-label="Reddit">
+                <a href="#" class="mx-2  transition-colors duration-300 text-gray-300 hover:text-orange-500"
+                    aria-label="Reddit">
                     <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -55,8 +67,9 @@
                         </path>
                     </svg>
                 </a>
-        
-                <a href="#" class="mx-2  transition-colors duration-300 text-gray-300 hover:text-orange-500" aria-label="Facebook">
+
+                <a href="#" class="mx-2  transition-colors duration-300 text-gray-300 hover:text-orange-500"
+                    aria-label="Facebook">
                     <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -64,8 +77,9 @@
                         </path>
                     </svg>
                 </a>
-        
-                <a href="#" class="mx-2  transition-colors duration-300 text-gray-300 hover:text-orange-500" aria-label="Github">
+
+                <a href="#" class="mx-2 transition-colors duration-300 text-gray-300 hover:text-orange-500"
+                    aria-label="Github">
                     <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -77,7 +91,6 @@
         </footer>
     </div>
     <script type="module" src="/src/index.ts"></script>
-    <link rel="stylesheet" href="./src/index.css">
 </body>
 
 </html>
