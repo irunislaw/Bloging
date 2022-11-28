@@ -1,14 +1,14 @@
 # Bloging
 
  1. - [X] (1 pkt) Skompilowanie oraz uruchomienie projektu
- 2. - [ ] (17 pkt) Uwzględnienie wymagań z uwzględnieniem sytuacji wyjątkowych:
+ 2. - [X] (17 pkt) Uwzględnienie wymagań z uwzględnieniem sytuacji wyjątkowych:
 	- - [X] (1 pkt) Wyświetlanie blogów na stronie głównej
 	- - [X] (1 pkt) Aplikacja powinna wyświetlać blogi zaczynając od najnowszego z nich
-	- - [ ] (5 pkt) Sortowanie blogów według:
+	- - [X] (5 pkt) Sortowanie blogów według:
 		- - [X] (1 pkt) Daty
 		- - [X] (1 pkt) Wyświetleń
 		- - [X] (1 pkt) Polubień  
-		- - [ ] (2 pkt) Popularność
+		- - [X] (2 pkt) Popularność
 	- - [X] (2 pkt) Wyszukiwanie po: 
 		- - [X] (1 pkt) Tytule
 		- - [X] (1 pkt) Tagach
