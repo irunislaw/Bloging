@@ -1,10 +1,13 @@
 import { getLocale } from "../util/getLocale"
+import trash from "../../image/trash-solid.svg";
+
 
 export const BlogComponent = (id: string, title: string, shortContent: string, author: string, authorUrl: string, tags: string[], date: Date, likes: number, views: number) => {
 
     return String.raw`
-<div class="blog bg-gradient-to-tr py-10 from-rose-500 gap-10 flex flex-col justify-between to-orange-500 rounded-sm shadow-lg duration-200 w-full"
+<div class="relative blog bg-gradient-to-tr py-10 from-rose-500 gap-10 flex flex-col justify-between to-orange-500 rounded-sm shadow-lg duration-200 w-full"
     onclick="addView('${id}')">
+    <img src="${trash}" class="top-0 right-0 absolute w-5 aspect-square m-4 invert text-white" />
     <div>
         <div class="px-10 text-2xl whitespace-pre-wrap font-medium text-white uppercase">${title}</div>
         <div class="px-10 whitespace-pre-wrap text-white">${shortContent}</div>
