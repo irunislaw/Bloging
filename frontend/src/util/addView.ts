@@ -1,6 +1,12 @@
+import { blogsDiv, globalBlogArray } from "..";
+import { renderBlogs } from "./renderBlogs";
+
 export const addView = async (id: string) => {
     try {
         console.log(id);
+
+        globalBlogArray[globalBlogArray.findIndex((b) => b._id == id)].views++;
+        renderBlogs(globalBlogArray);
 
         console.log(
             await fetch(
@@ -14,6 +20,7 @@ export const addView = async (id: string) => {
                 }
             )
         );
+        
     } catch (error) {
         console.error(error);
     }

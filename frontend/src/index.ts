@@ -50,7 +50,9 @@ document.querySelector("#search")?.addEventListener("input", () => renderBlogs(g
 })();
 
 const hideBlog = (id: string) => {
-    document.getElementById(id)?.classList.add("hidden");
+    document.getElementById(id)?.remove();
+    globalBlogArray = globalBlogArray.filter((b) => b._id != id);
+    renderBlogs(globalBlogArray);
 };
 //@ts-ignore
 window.hideBlog = hideBlog;
