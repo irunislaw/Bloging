@@ -5,7 +5,7 @@
 	- - [X] (1 pkt) Wyświetlanie blogów na stronie głównej
 	- - [X] (1 pkt) Aplikacja powinna wyświetlać blogi zaczynając od najnowszego z nich
 	- - [ ] (5 pkt) Sortowanie blogów według:
-		- - [ ] (1 pkt) Daty
+		- - [X] (1 pkt) Daty
 		- - [ ] (1 pkt) Wyświetleń
 		- - [ ] (1 pkt) Polubień  
 		- - [ ] (2 pkt) Popularność
