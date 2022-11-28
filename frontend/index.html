@@ -14,8 +14,8 @@
         <nav class="flex sticky items-center justify-center top-0 cursor-pointer bg-purple-900 px-5 py-5 ">
            
             
-            <input type="text" name="search" class="p-3 text-base border-solid-2 rounded-md bg-purple-100 hover:bg-purple-200" />
-            <button  class="ml-3 p-3 text-base border-solid-2 bg-purple-100 rounded-lg hover:bg-purple-200">Wyszukaj</button>
+            <input type="text" name="search" class=" caret-purple-900  p-3 text-base border-solid-2 rounded-md bg-purple-100 hover:bg-purple-200" placeholder="Wyszukaj bloga..."/>
+            <button  class="text-purple-900 font-medium ml-3 p-3 text-base border-solid-2 bg-purple-100 rounded-lg hover:bg-purple-200">Wyszukaj</button>
         </div>
     </nav>
 
@@ -46,16 +46,17 @@
             </div>
         </div> -->
 
-        
-<select class="appearance-none outline-none border-0 ">
+        <div class=" flex justify-end mt-2 mr-48" >
+<select   class=" mr-5 bg-purple-100 border  text-purple-900 font-medium text-sm rounded-lg flex justify-end py-2.5 px-7  border-purple-900  ">
+    <option selected>wybierz opcje</option>
     <option value="data">data</option>
     <option value="wyświetlenia">wyświetlenia</option>
     <option value="tytuł">tytuł</option>
     <option value="popularność">popularność</option>
   </select>
-        
+</div>
        
-        <div class="flex justify-center py-10 px-4 lg:p-10">
+        <div class=" flex justify-center py-10 px-4 lg:p-10">
             <div id="error" class="hidden"></div>
             <div id="blogs" class="grid grid-cols-1 gap-5 w-full lg:w-9/12 xl:grid-cols-2 content-center"></div>
         </div>
