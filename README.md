@@ -9,17 +9,17 @@
 		- - [ ] (1 pkt) Wyświetleń
 		- - [ ] (1 pkt) Polubień  
 		- - [ ] (2 pkt) Popularność
-	- - [ ] (2 pkt) Wyszukiwanie po: 
-		- - [ ] (1 pkt) Tytule
-		- - [ ] (1 pkt) Tagach
+	- - [X] (2 pkt) Wyszukiwanie po: 
+		- - [X] (1 pkt) Tytule
+		- - [X] (1 pkt) Tagach
 	- - [ ] (5 pkt) Blog składa się z:
 		- - [X] (1pkt) Tytułu
 		- - [X] (1pkt) Tagów
 		- - [X] (1pkt) Wyświetleń
 		- - [X] (1pkt) Polubień
 		- - [ ] (1pkt) Miniaturki,Skrót treści
-	- - [ ] (2 pkt) Każdy z blogów powinien zawierać przycisk hide w celu ukrycia bloga
-3. - [ ] (7 pkt) Styl aplikacji
+	- - [X] (2 pkt) Każdy z blogów powinien zawierać przycisk hide w celu ukrycia bloga
+3. - [X] (7 pkt) Styl aplikacji
 	- - [X] (2 pkt) Użycie frameworka CSS np. Tailwind lub czystego CSS
 	- - [X] (1 pkt) Funkcjonalne ułożenie elementów aplikacji
 	- - [X] (4 pkt) Responsywny design strony
