@@ -29,7 +29,7 @@ document.querySelector("#search")?.addEventListener("input", () => renderBlogs(g
 
         const data = (await (
             await fetch(
-                "https://bloggingbackend.onrender.com/api/v1/blogs/get-blogs",
+                "/api/v1/blogs/get-blogs",
                 {}
             )
         ).json()) as Blog[];
