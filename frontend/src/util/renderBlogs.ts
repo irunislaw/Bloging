@@ -31,3 +31,5 @@ export let renderBlogs = (blogs: Blog[]) => {
         );
     }
 };
+//@ts-ignore
+window.renderBlogs = renderBlogs;

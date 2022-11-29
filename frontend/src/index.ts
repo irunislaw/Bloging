@@ -2,12 +2,12 @@ import { Blog } from "./interfaces/Blog";
 import { renderBlogs } from "./util/renderBlogs";
 import { loadEmojis, emojis } from "./util/loadEmojis";
 import { addView } from "./util/addView";
-
-
+import 'tw-elements';
 
 
 export let globalBlogArray: Blog[];
-
+//@ts-ignore
+window.globalBlogArray = globalBlogArray;
 
 document
     .querySelector("#selectSort")
@@ -29,7 +29,7 @@ document.querySelector("#search")?.addEventListener("input", () => renderBlogs(g
 
         const data = (await (
             await fetch(
-                "/api/v1/blogs/get-blogs",
+                "https://bloggingbackend.onrender.com/api/v1/blogs/get-blogs",
                 {}
             )
         ).json()) as Blog[];
@@ -43,6 +43,8 @@ document.querySelector("#search")?.addEventListener("input", () => renderBlogs(g
         blogsDiv.classList.add("grid");
         blogsDiv.classList.remove("hidden");
     } catch (error) {
+        console.error(error);
+        
         blogsDiv.classList.add("hidden");
         errorDiv.classList.remove("hidden");
         errorDiv.classList.add("flex");
