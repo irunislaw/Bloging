@@ -18,6 +18,7 @@ export let search = () => {
         for (const tag of obj.tags) {
             if(tag.match(new RegExp(value, "gi"))) return true;
         }
+        return false;
     })
 
 };
